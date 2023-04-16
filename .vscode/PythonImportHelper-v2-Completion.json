@@ -52,28 +52,28 @@
     {
         "label": "load_data",
         "kind": 2,
-        "importPath": "streamlit_app",
-        "description": "streamlit_app",
+        "importPath": "main",
+        "description": "main",
         "peekOfCode": "def load_data(ticker):\n    data=yf.download(ticker,START, TODAY)\n    data.reset_index(inplace=True)\n    return data\ndata_load_state=st.text(\"Load Data...\")\ndata=load_data(selected_stock)\ndata_load_state.text(\"Loading  data... done!\")\nst.subheader('Raw Data')\nst.write(data.tail())\ndef plot_raw_data():",
-        "detail": "streamlit_app",
+        "detail": "main",
         "documentation": {}
     },
     {
         "label": "plot_raw_data",
         "kind": 2,
-        "importPath": "streamlit_app",
-        "description": "streamlit_app",
+        "importPath": "main",
+        "description": "main",
         "peekOfCode": "def plot_raw_data():\n    fig=go.Figure()\n    fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name='stock_open'))\n    fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='stock_close'))\n    fig.layout.update(title_text=\"Time Series Data\", xaxis_rangeslider_visible=True)\n    st.plotly_chart(fig)\nplot_raw_data()\n#Forecasting\ndf_train=data[['Date', 'Close']]\ndf_train=df_train.rename(columns={\"Date\":\"ds\", \"Close\":\"y\"})",
-        "detail": "streamlit_app",
+        "detail": "main",
         "documentation": {}
     },
     {
         "label": "TODAY",
         "kind": 5,
-        "importPath": "streamlit_app",
-        "description": "streamlit_app",
+        "importPath": "main",
+        "description": "main",
         "peekOfCode": "TODAY = date.today().strftime(\"%Y-%m-%d\")\nst.title(\"Stock Prediction App\")\nstocks =(\"AAPL\", \"GOOG\", \"MSFT\", \"GME\" )\nselected_stock=st.selectbox(\"Select Dataset for prediction\", stocks)\nn_years=st.slider(\"Years of Prediction:\", 1, 4)\nperiod =n_years*365\n@st.cache_data\ndef load_data(ticker):\n    data=yf.download(ticker,START, TODAY)\n    data.reset_index(inplace=True)",
-        "detail": "streamlit_app",
+        "detail": "main",
         "documentation": {}
     }
 ]
