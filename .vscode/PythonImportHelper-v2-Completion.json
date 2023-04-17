@@ -72,7 +72,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "TODAY = date.today().strftime(\"%Y-%m-%d\")\nst.title(\"Stock Prediction App\")\nstocks =(\"AAPL\", \"GOOG\", \"MSFT\", \"GME\" )\nselected_stock=st.selectbox(\"Select Dataset for prediction\", stocks)\nn_years=st.slider(\"Years of Prediction:\", 1, 4)\nperiod =n_years*365\n@st.cache_data\ndef load_data(ticker):\n    data=yf.download(ticker,START, TODAY)\n    data.reset_index(inplace=True)",
+        "peekOfCode": "TODAY = date.today().strftime(\"%Y-%m-%d\")\nst.title(\"Stock Prediction App\")\nstocks =(\"AAPL\", \"GOOG\", \"MSFT\", \"GME\", \"TSLA\", \"META\", \"ANQ\" )\nselected_stock=st.selectbox(\"Select Dataset for prediction\", stocks)\nn_years=st.slider(\"Years of Prediction:\", 1, 4)\nperiod =n_years*365\n@st.cache_data\ndef load_data(ticker):\n    data=yf.download(ticker,START, TODAY)\n    data.reset_index(inplace=True)",
         "detail": "main",
         "documentation": {}
     }
